@@ -1,0 +1,43 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>SchoolDetails</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <h1>Details of School</h1>
+        <table border="4px">
+            <tr>
+                <th>Name of the School:</th>
+                <td>{{sclobject.sname}}</td>
+            </tr>
+            <tr>
+                <th>Principal of the School:</th>
+                <td>{{sclobject.sprincipal}}</td>
+            </tr>
+            <tr>
+                <th>Location of the School:</th>
+                <td>{{sclobject.sloc}}</td>
+            </tr>
+
+        </table>
+        <br><br>
+        <h4>Student Details are:</h4>
+        <table border="2xpx">
+            <tr>
+                <th>Student Name</th>
+                <th>Student RollNo</th>
+            </tr>
+            
+            {% for st in sclobject.students.all %}
+                <tr>
+                    <td>{{st.stname}}</td>
+                    <td>{{st.rollno}}</td>
+                </tr>
+            {% endfor %}
+            
+        </table>
+        
+    </center>
+{% endblock %}

@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from app.models import *
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 
 class SchoolList(ListView):
     model=School #it will retrive all the data from the specifed table
@@ -10,3 +10,7 @@ class SchoolList(ListView):
     #ordering='sname' #It displays the objects according to Alphabets, by default it displays in insertion order
     #queryset=School.objects.filter(id=3) # we can write the queryset to customize(not mandatory)
     #template_name='school_list.html' #not manadatory
+
+class SchoolDetails(DetailView):
+    model=School
+    context_object_name='sclobject'
