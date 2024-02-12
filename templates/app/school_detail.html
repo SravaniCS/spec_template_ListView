@@ -24,7 +24,7 @@
         </table>
         <br><br>
         <h4>Student Details are:</h4>
-        <table border="2xpx">
+        <table border="2px">
             <tr>
                 <th>Student Name</th>
                 <th>Student RollNo</th>
@@ -38,6 +38,9 @@
             {% endfor %}
             
         </table>
+        <br>
+        <a href="{% url 'SchoolUpdate' pk=sclobject.pk %}" class="btn btn-success">SchoolUpdate</a>
         
     </center>
+
 {% endblock %}

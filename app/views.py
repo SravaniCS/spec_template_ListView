@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from app.models import *
-from django.views.generic import ListView,DetailView
+from django.views.generic import ListView,DetailView,CreateView,UpdateView
 
 class SchoolList(ListView):
     model=School #it will retrive all the data from the specifed table
@@ -14,3 +14,14 @@ class SchoolList(ListView):
 class SchoolDetails(DetailView):
     model=School
     context_object_name='sclobject'
+
+
+
+class SchoolCreate(CreateView):
+    model=School
+    fields='__all__'
+
+
+class SchoolUpdate(UpdateView):
+    model=School
+    fields='__all__'
