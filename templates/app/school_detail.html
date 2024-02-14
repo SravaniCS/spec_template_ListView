@@ -5,9 +5,23 @@
 {% endblock %}
 
 {% block body_block %}
+<style>
+    body
+    {
+        background-color: slategrey;
+    }
+    h1, h4
+    {
+        color: cornsilk;
+    }
+    table
+    {
+        border-color: black;
+    }
+</style>
     <center>
         <h1>Details of School</h1>
-        <table border="4px">
+        <table border="4px" style="background-color:lightsteelblue;">
             <tr>
                 <th>Name of the School:</th>
                 <td>{{sclobject.sname}}</td>
@@ -24,7 +38,7 @@
         </table>
         <br><br>
         <h4>Student Details are:</h4>
-        <table border="2px">
+        <table border="2px" style="background-color:lightsteelblue;">
             <tr>
                 <th>Student Name</th>
                 <th>Student RollNo</th>
@@ -40,6 +54,8 @@
         </table>
         <br>
         <a href="{% url 'SchoolUpdate' pk=sclobject.pk %}" class="btn btn-success">SchoolUpdate</a>
+
+        <a href="{% url 'SchoolDelete' pk=sclobject.pk %}" class="btn btn-danger">SchoolDelete</a>
         
     </center>
 

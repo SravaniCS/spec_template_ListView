@@ -5,10 +5,20 @@
 {% endblock %}
 
 {% block body_block %}
+<style>
+    body
+    {
+        background-color: slategrey;
+    }
+    h1
+    {
+        color: cornsilk;
+    }
+</style>
     <center>
         <h1>List of School Objects</h1>
             {% for s in schools %}
-                <a href="{{s.pk}}"><h3>{{s.sname}}</h3></a>
+                <a href="{{s.pk}}" style="color: khaki;"><h3>{{s.sname}}</h3></a>
             {% endfor %}
     </center>
 {% endblock %}
